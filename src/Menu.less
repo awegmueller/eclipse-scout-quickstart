@@ -1,0 +1,51 @@
+.vg-menu-button {
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.vg-menu-box {
+  -webkit-box-shadow: 5px 5px 5px -2px #888;
+  box-shadow: 5px 5px 5px -2px #888;
+  background-color: white;
+}
+
+.slide-in {
+  animation: slide-in 0.25s forwards;
+  -webkit-animation: slide-in 0.4s forwards;
+}
+
+.slide-out {
+  animation: slide-out 0.25s forwards;
+  -webkit-animation: slide-out 0.4s forwards;
+}
+
+@keyframes slide-in {
+  100% { transform: translateX(190px); }
+}
+
+@-webkit-keyframes slide-in {
+  100% { -webkit-transform: translateX(190px); }
+}
+
+.vg-menu-item {
+  width: 200px;
+  vertical-align: middle;
+  padding: 10px 10px 10px 20px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #ddd;
+  }
+
+  &.profile {
+    height: 122px;
+    background-image: url("/img/profile-bg.jpg");
+    color: white;
+    vertical-align: bottom;
+
+    & > .user-name {
+      font-weight: bold;
+      margin-top: 65px;
+    }
+  }
+}

@@ -1,0 +1,33 @@
+<!doctype html>
+
+<html lang="de">
+<head>
+    <meta charset="utf-8">
+
+    <title>Videogames App</title>
+    <meta name="description" content="Videogames App">
+    <meta name="author" content="André Wegmüller">
+
+    <link rel="stylesheet" href="lib/eclipse-scout.css">
+    <link rel="stylesheet" href="build/css/videogames.css">
+</head>
+
+<body>
+    <div class="scout"></div>
+    <script src="lib/jquery-2.2.4.js"></script>
+    <script src="lib/jquery-ui-1.11.2.js"></script>
+    <script src="lib/eclipse-scout.js"></script>
+    <script src="build/js/videogames.js"></script>
+    <script>
+      new scout.App().init({
+      bootstrap: {
+        fonts: ['scoutIcons'],
+        modelsUrl: 'json/videogames-models.json',
+        textsUrl: 'json/texts.json',
+        codesUrl: 'json/codes.json',
+        localesUrl: 'json/locales.json'
+      }
+    });
+    </script>
+</body>
+</html>

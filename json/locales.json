@@ -1,0 +1,81 @@
+[
+  {
+    "languageTag": "de-CH",
+    "decimalFormatPatternDefault": "#,##0.###",
+    "dateFormatPatternDefault": "dd.MM.yyyy",
+    "decimalFormatSymbols": {
+      "decimalSeparator": ",",
+      "groupingSeparator": ".",
+      "minusSign": "-"
+    },
+    "dateFormatSymbols": {
+      "months": [
+        "Januar",
+        "Februar",
+        "März",
+        "April",
+        "Mai",
+        "Juni",
+        "Juli",
+        "August",
+        "September",
+        "Oktober",
+        "November",
+        "Dezember"
+      ],
+      "monthsShort": [
+        "Jan",
+        "Feb",
+        "Mär",
+        "Apr",
+        "Mai",
+        "Jun",
+        "Jul",
+        "Aug",
+        "Sep",
+        "Okt",
+        "Nov",
+        "Dez"
+      ],
+      "weekdays": [
+        "Sonntag",
+        "Montag",
+        "Dienstag",
+        "Mittwoch",
+        "Donnerstag",
+        "Freitag",
+        "Samstag"
+      ],
+      "weekdaysShort": [
+        "So",
+        "Mo",
+        "Di",
+        "Mi",
+        "Do",
+        "Fr",
+        "Sa"
+      ],
+      "am": "AM",
+      "pm": "PM",
+      "firstDayOfWeek": 1,
+      "weekdaysOrdered": [
+        "Montag",
+        "Dienstag",
+        "Mittwoch",
+        "Donnerstag",
+        "Freitag",
+        "Samstag",
+        "Sonntag"
+      ],
+      "weekdaysShortOrdered": [
+        "Mo",
+        "Di",
+        "Mi",
+        "Do",
+        "Fr",
+        "Sa",
+        "So"
+      ]
+    }
+  }
+]

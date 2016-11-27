@@ -1,0 +1,11 @@
+{
+  "name": "eclipse-scout-quickstart",
+  "version": "1.0.0",
+  "description": "Quick Start application with Scout JS",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "André Wegmüller",
+  "license": "ISC"
+}
