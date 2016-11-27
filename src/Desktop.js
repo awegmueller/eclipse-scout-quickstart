@@ -35,7 +35,23 @@ videogames.Desktop.prototype._init = function(model) {
     image: '/img/dont-starve.jpeg'
   });
 
-  this.gamesPanel.games = [deusEx, dontStarve]; // FIXME make a setter
+  var uncharted = scout.create('videogames.Game', {
+    parent: this.gamesPanel,
+    title: 'Uncharted 4',
+    genre: 'Action Adventure',
+    developer: 'Naughty Dog',
+    image: '/img/uncharted4.jpg'
+  });
+
+  var metalGear = scout.create('videogames.Game', {
+    parent: this.gamesPanel,
+    title: 'Metal Gear Solid V',
+    genre: 'Stealth Shooter',
+    developer: 'Koijma Productions',
+    image: '/img/mgsv.png'
+  });
+
+  this.gamesPanel.games = [deusEx, dontStarve, uncharted, metalGear]; // FIXME make a setter
 };
 
 videogames.Desktop.prototype._renderProperties = function() {

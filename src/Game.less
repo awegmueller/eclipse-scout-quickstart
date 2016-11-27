@@ -4,11 +4,14 @@
 .game {
 
   width: @game-width;
+  display: inline-block;
+  cursor: pointer;
 
   & > .info {
     padding: 8px 10px 15px 16px;
     border-bottom: solid 1px #ddd;
     border-right: solid 1px #ddd;
+    background-color: white;
 
     & > .title {
       font-weight: bold;
@@ -21,6 +24,7 @@
   & > .image-box {
     width: @game-width;
     height: @game-cover-height;
+    text-align: center;
 
     /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#45484d+0,000000+100;Black+3D+%231 */
     background: #45484d; /* Old browsers */
