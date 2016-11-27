@@ -2,11 +2,11 @@ videogames.Menu = function() {
   videogames.Menu.parent.call(this);
 
   this.menuItems = [
-    ['\uf0e7', 'Kürzlich gespielt'],
-    ['\uf187', 'Archiv'],
-    ['\uf06b', 'Wunschliste'],
-    ['\uf0c0', 'Freunde spielen'],
-    ['\uf059', 'Hilfe und Feedback']
+    ['\uf0e7', 'green', 'Kürzlich gespielt'],
+    ['\uf187', null, 'Archiv'],
+    ['\uf06b', null, 'Wunschliste'],
+    ['\uf0c0', null, 'Freunde spielen'],
+    ['\uf059', null, 'Hilfe und Feedback']
   ];
 };
 scout.inherits(videogames.Menu, scout.Popup);
@@ -28,12 +28,17 @@ videogames.Menu.prototype._render = function($parent) {
   this._renderProfileMenuItem();
 
   this.menuItems.forEach(function(item) {
-    var $item = this.$container.appendDiv('vg-menu-item');
-    var $icon = $item.appendDiv('icon');
-    $item
-      .text(item[1])
-      .data('menuItem', item)
-      .on('mousedown', this._onMenuItemClick.bind(this));
+    var $item = this.$container.appendDiv('vg-menu-item')
+      .on('mousedown', this._onMenuItemClick.bind(this))
+      .data('menuItem', item);
+    var $icon = $item.appendDiv('vg-icon')
+      .text(item[0]);
+    if (item[1]) {
+      $icon.addClass(item[1]);
+      $icon.addClass(item[1]);
+    }
+    var $text = $item.appendDiv('vg-text')
+      .text(item[2]);
   }, this);
 };
 
