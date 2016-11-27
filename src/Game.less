@@ -1,0 +1,37 @@
+@game-width: 220px;
+@game-cover-height: 270px;
+
+.game {
+
+  width: @game-width;
+
+  & > .info {
+    padding: 8px 10px 15px 16px;
+    border-bottom: solid 1px #ddd;
+    border-right: solid 1px #ddd;
+
+    & > .title {
+      font-weight: bold;
+    }
+    & > .developer, .genre {
+      color: #777;
+    }
+  }
+
+  & > .image-box {
+    width: @game-width;
+    height: @game-cover-height;
+
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#45484d+0,000000+100;Black+3D+%231 */
+    background: #45484d; /* Old browsers */
+    background: -webkit-linear-gradient(top,  #45484d 0%,#000000 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom,  #45484d 0%,#000000 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+
+    & > img {
+      max-width: @game-width;
+      max-height: @game-cover-height;
+    }
+  }
+
+}
+

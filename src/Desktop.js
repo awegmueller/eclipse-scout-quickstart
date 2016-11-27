@@ -2,6 +2,7 @@ videogames.Desktop = function() {
   videogames.Desktop.parent.call(this);
 
   this.vgMenu = null;
+  this.gamesPanel = null;
 };
 scout.inherits(videogames.Desktop, scout.Desktop);
 
@@ -11,6 +12,30 @@ videogames.Desktop.prototype._init = function(model) {
   // FIXME: das sollte default sein, wenn es keine outlines gibt
   this.setNavigationVisible(false);
   this.setNavigationHandleVisible(false);
+
+
+
+  this.gamesPanel = scout.create('videogames.GamesPanel', {
+    parent: this
+  });
+
+  var deusEx = scout.create('videogames.Game', {
+    parent: this.gamesPanel,
+    title: 'Deux Ex Mankind Divided',
+    genre: 'Stealth Action',
+    developer: 'Square Enix',
+    image: '/img/deus-ex-mankind-divided.jpg'
+  });
+
+  var dontStarve = scout.create('videogames.Game', {
+    parent: this.gamesPanel,
+    title: 'Don\'t Starve',
+    genre: 'Open World Survival',
+    developer: 'Klei Entertainment',
+    image: '/img/dont-starve.jpeg'
+  });
+
+  this.gamesPanel.games = [deusEx, dontStarve]; // FIXME make a setter
 };
 
 videogames.Desktop.prototype._renderProperties = function() {
@@ -27,6 +52,8 @@ videogames.Desktop.prototype._renderProperties = function() {
   });
   this.mainMenu.on('doAction', this._onMainMenuAction.bind(this));
   this.setMenus([this.mainMenu]);
+
+  this._renderGamesPanel();
 };
 
 videogames.Desktop.prototype._render = function($parent) {
@@ -40,6 +67,11 @@ videogames.Desktop.prototype._render = function($parent) {
   this.header.toolBox.setHorizontalAlignment(-1);
 };
 
+// FIXME das ist auch etwas seltsam, besser wäre es hier wenn man den bench entweder komplett ersetzen könnte
+// (widget) oder immerhin auf dem bench eine Methode setContent vorhanden wäre.
+videogames.Desktop.prototype._renderGamesPanel = function() {
+  this.gamesPanel.render(this.bench.$container);
+};
 
 videogames.Desktop.prototype._onMainMenuAction = function(event) {
   var leftX = scout.graphics.getSize(this.$container).width;
