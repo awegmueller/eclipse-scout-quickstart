@@ -2,8 +2,30 @@ videogames.GamesPanel = function() {
   videogames.GamesPanel.parent.call(this);
 
   this.games = [];
+  this.selectedGame = null;
+  this.gameSelectedHandler = this._onGameSelected.bind(this);
 };
 scout.inherits(videogames.GamesPanel, scout.Widget);
+
+videogames.GamesPanel.prototype._init = function(model) {
+  videogames.GamesPanel.parent.prototype._init.call(this, model);
+
+  this.games.forEach(function(game) {
+    game.setParent(this);
+    game.on('selected', this.gameSelectedHandler);
+  }, this);
+};
+
+videogames.GamesPanel.prototype._onGameSelected = function(event) {
+  var game = event.game;
+  if (this.selectedGame) {
+    this.selectedGame.setSelected(false);
+  }
+  if (game) {
+    game.setSelected(true);
+  }
+  this.selectedGame = game;
+};
 
 videogames.GamesPanel.prototype._render = function($parent) {
   this.$container = $parent.appendDiv('games-panel');
@@ -12,19 +34,13 @@ videogames.GamesPanel.prototype._render = function($parent) {
   this.games.forEach(function(game) {
     game.render(this.$games);
   }, this);
-
-  this._installScrollbars();
   this._installScrollbars();
 };
-
-// FIXME cgu fragen warum desktop im chrome mobile modus viel zu breit ist
-// und warum die scrollbars nicht funktionieren. Brauchen die ein Layout?
 
 videogames.GamesPanel.prototype._installScrollbars = function() {
   scout.scrollbars.install(this.$games, {
     parent: this,
-    axis: 'x',
-    nativeScrollbars: true
+    axis: 'x'
   });
 };
 

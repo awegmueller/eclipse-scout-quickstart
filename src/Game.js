@@ -5,6 +5,7 @@ videogames.Game = function() {
   this.genre = null;
   this.developer = null;
   this.image = null;
+  this.selected = false;
 }
 scout.inherits(videogames.Game, scout.Widget);
 
@@ -20,4 +21,23 @@ videogames.Game.prototype._render = function($parent) {
     .text(this.developer);
   this.$genre = this.$info.appendDiv('genre')
     .text(this.genre);
+
+  this.$container.on('click', this._onClick.bind(this));
+};
+
+videogames.Game.prototype._renderProperties = function() {
+  videogames.Game.parent.prototype._renderProperties.call(this);
+  this._renderSelected();
+};
+
+videogames.Game.prototype._onClick = function(event) {
+  this.trigger('selected', {game: this});
+};
+
+videogames.Game.prototype.setSelected = function(selected) {
+  this.setProperty('selected', selected);
+};
+
+videogames.Game.prototype._renderSelected = function() {
+  this.$container.toggleClass('selected', this.selected);
 };

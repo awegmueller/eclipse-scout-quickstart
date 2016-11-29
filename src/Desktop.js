@@ -13,14 +13,8 @@ videogames.Desktop.prototype._init = function(model) {
   this.setNavigationVisible(false);
   this.setNavigationHandleVisible(false);
 
-
-
-  this.gamesPanel = scout.create('videogames.GamesPanel', {
-    parent: this
-  });
-
   var deusEx = scout.create('videogames.Game', {
-    parent: this.gamesPanel,
+    parent: this, // FIXME: es ist erklärungswürdig, wie man das mit dem parent macht bei composite objects (huhn/ei-problem)
     title: 'Deux Ex Mankind Divided',
     genre: 'Stealth Action',
     developer: 'Square Enix',
@@ -28,7 +22,7 @@ videogames.Desktop.prototype._init = function(model) {
   });
 
   var dontStarve = scout.create('videogames.Game', {
-    parent: this.gamesPanel,
+    parent: this,
     title: 'Don\'t Starve',
     genre: 'Open World Survival',
     developer: 'Klei Entertainment',
@@ -36,7 +30,7 @@ videogames.Desktop.prototype._init = function(model) {
   });
 
   var uncharted = scout.create('videogames.Game', {
-    parent: this.gamesPanel,
+    parent: this,
     title: 'Uncharted 4',
     genre: 'Action Adventure',
     developer: 'Naughty Dog',
@@ -44,14 +38,18 @@ videogames.Desktop.prototype._init = function(model) {
   });
 
   var metalGear = scout.create('videogames.Game', {
-    parent: this.gamesPanel,
+    parent: this,
     title: 'Metal Gear Solid V',
     genre: 'Stealth Shooter',
     developer: 'Koijma Productions',
     image: '/img/mgsv.png'
   });
 
-  this.gamesPanel.games = [deusEx, dontStarve, uncharted, metalGear]; // FIXME make a setter
+  var games = [deusEx, dontStarve, uncharted, metalGear];
+  this.gamesPanel = scout.create('videogames.GamesPanel', {
+    parent: this,
+    games: games
+  });
 };
 
 videogames.Desktop.prototype._renderProperties = function() {
