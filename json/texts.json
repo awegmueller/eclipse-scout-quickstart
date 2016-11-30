@@ -1,2 +1,9 @@
 {
+  "de-CH": {
+    "OK": "OK",
+    "Cancel": "Abbrechen",
+    "Title": "Titel",
+    "Developer": "Entwickler",
+    "Genre": "Genre"
+  }
 }

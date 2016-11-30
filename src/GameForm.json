@@ -1,0 +1,31 @@
+{
+  "type": "model",
+  "id": "videogames.GameForm",
+  "objectType": "Form",
+  "title": "Holy Cow!",
+  "rootGroupBox": {
+    "objectType": "GroupBox",
+    "mainBox": true,
+    "fields": [
+      {
+        "objectType": "StringField",
+        "label": "Title"
+      }
+    ],
+    "menus": [
+      {
+        "id": "OkButton",
+        "objectType": "Menu",
+        "text": "${textKey:OK}",
+        "actionStyle": 1,
+        "keyStroke": "ENTER"
+      },
+      {
+        "id": "CancelButton",
+        "objectType": "Menu",
+        "text": "${textKey:Cancel}",
+        "actionStyle": 1
+      }
+    ]
+  }
+}

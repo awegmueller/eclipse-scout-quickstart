@@ -37,6 +37,14 @@ videogames.Desktop.prototype._init = function(model) {
     image: '/img/uncharted4.jpg'
   });
 
+  var noMansSky = scout.create('videogames.Game', {
+    parent: this,
+    title: 'No Man\'s Sky',
+    genre: 'Open World, Action',
+    developer: 'Hello Games',
+    image: '/img/no-mans-sky.jpg'
+  });
+
   var metalGear = scout.create('videogames.Game', {
     parent: this,
     title: 'Metal Gear Solid V',
@@ -45,7 +53,7 @@ videogames.Desktop.prototype._init = function(model) {
     image: '/img/mgsv.png'
   });
 
-  var games = [deusEx, dontStarve, uncharted, metalGear];
+  var games = [deusEx, dontStarve, uncharted, noMansSky, metalGear];
   this.gamesPanel = scout.create('videogames.GamesPanel', {
     parent: this,
     games: games

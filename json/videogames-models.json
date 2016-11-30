@@ -1,5 +1,47 @@
 {
-  "videogames.Desktop": {
-    "objectType": "Desktop"
+  "videogames.GameForm": {
+    "type": "model",
+    "closable": false,
+    "resizable": false,
+    "id": "videogames.GameForm",
+    "title": "Holy Cow!",
+    "objectType": "Form",
+    "rootGroupBox": {
+      "objectType": "GroupBox",
+      "mainBox": true,
+      "gridColumnCount": 1,
+      "fields": [
+        {
+          "id": "TitleField",
+          "objectType": "StringField",
+          "label": "${textKey:Title}"
+        },
+        {
+          "id": "DeveloperField",
+          "objectType": "StringField",
+          "label": "${textKey:Developer}"
+        },
+        {
+          "id": "GenreField",
+          "objectType": "StringField",
+          "label": "${textKey:Genre}"
+        }
+      ],
+      "menus": [
+        {
+          "id": "OkButton",
+          "objectType": "Menu",
+          "text": "${textKey:OK}",
+          "actionStyle": 1,
+          "keyStroke": "ENTER"
+        },
+        {
+          "id": "CancelButton",
+          "objectType": "Menu",
+          "text": "${textKey:Cancel}",
+          "actionStyle": 1
+        }
+      ]
+    }
   }
 }

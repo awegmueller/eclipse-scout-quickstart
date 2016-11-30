@@ -25,6 +25,13 @@ videogames.GamesPanel.prototype._onGameSelected = function(event) {
     game.setSelected(true);
   }
   this.selectedGame = game;
+
+  var desktop = this.session.desktop,
+    gameForm = scout.create('videogames.GameForm', {
+    parent: desktop,
+    game: game
+  });
+  desktop.showForm(gameForm);
 };
 
 videogames.GamesPanel.prototype._render = function($parent) {
