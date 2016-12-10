@@ -10,21 +10,33 @@
       "objectType": "GroupBox",
       "mainBox": true,
       "gridColumnCount": 1,
+      "gridDataHints": {
+        "useUiHeight": true
+      },
       "fields": [
         {
-          "id": "TitleField",
-          "objectType": "StringField",
-          "label": "${textKey:Title}"
-        },
-        {
-          "id": "DeveloperField",
-          "objectType": "StringField",
-          "label": "${textKey:Developer}"
-        },
-        {
-          "id": "GenreField",
-          "objectType": "StringField",
-          "label": "${textKey:Genre}"
+          "objectType": "GroupBox",
+          "gridColumnCount": 1,
+          "gridDataHints": {
+            "useUiHeight": true
+          },
+          "fields": [
+            {
+              "id": "TitleField",
+              "objectType": "StringField",
+              "label": "${textKey:Title}"
+            },
+            {
+              "id": "DeveloperField",
+              "objectType": "StringField",
+              "label": "${textKey:Developer}"
+            },
+            {
+              "id": "GenreField",
+              "objectType": "StringField",
+              "label": "${textKey:Genre}"
+            }
+          ]
         }
       ],
       "menus": [

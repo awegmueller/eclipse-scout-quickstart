@@ -16,8 +16,10 @@ videogames.GameForm.prototype._init = function(model) {
   this.widget('CancelButton').on('doAction', this._onCancelAction.bind(this));
 
   // FIXME - grid layout muss komplett automatisch passieren
+  // + defaults für GroupBox stimmt noch nicht (ist aber auf HEAD schon gefixt glaube ich)
   var grid = new scout.HorizontalGroupBoxBodyGrid();
   grid.validate(this.rootGroupBox);
+  grid.validate(this.rootGroupBox.fields[0]);
 
   var menuBar = this.rootGroupBox.menuBar;
   menuBar.bottom();

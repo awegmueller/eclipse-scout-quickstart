@@ -6,6 +6,9 @@
   "rootGroupBox": {
     "objectType": "GroupBox",
     "mainBox": true,
+    "gridDataHints": {
+      "useUiHeight": true
+    },
     "fields": [
       {
         "objectType": "StringField",
