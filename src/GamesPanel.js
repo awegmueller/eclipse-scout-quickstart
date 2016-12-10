@@ -3,6 +3,7 @@ videogames.GamesPanel = function() {
 
   this.games = [];
   this.selectedGame = null;
+  this.infoPanel = null;
   this.gameSelectedHandler = this._onGameSelected.bind(this);
 };
 scout.inherits(videogames.GamesPanel, scout.Widget);
@@ -25,13 +26,28 @@ videogames.GamesPanel.prototype._onGameSelected = function(event) {
     game.setSelected(true);
   }
   this.selectedGame = game;
+  this._showInfoPanel();
+};
 
-  var desktop = this.session.desktop,
-    gameForm = scout.create('videogames.GameForm', {
-    parent: desktop,
-    game: game
-  });
-  desktop.showForm(gameForm);
+videogames.GamesPanel.prototype._showInfoPanel = function() {
+  // fade out the old info panel
+  var desktop = this.session.desktop;
+  var oldInfoPanel = this.infoPanel;
+
+  if (oldInfoPanel) {
+    oldInfoPanel.hide();
+    this.infoPanel = null;
+  }
+
+  // fade in the new panel
+  if (this.selectedGame) {
+    var newInfoPanel = scout.create('videogames.InfoPanel', {
+      parent: desktop,
+      game: this.selectedGame
+    });
+    newInfoPanel.show();
+    this.infoPanel = newInfoPanel;
+  }
 };
 
 videogames.GamesPanel.prototype._render = function($parent) {

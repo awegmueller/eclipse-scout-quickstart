@@ -4,6 +4,7 @@
     "Cancel": "Abbrechen",
     "Title": "Titel",
     "Developer": "Entwickler",
-    "Genre": "Genre"
+    "Genre": "Genre",
+    "WelcomeText": "Diese tolle Videogames-Verwaltung wurde mit <a href=\"#\">Scout JS</a> realisiert. Es ist eine reine HTML5 Applikation, ohne Java und ohne Backend. Die Entwicklung erfolgte mit Webstorm, node.js, LESS, Gulp und unzähligen Gulp-Plugins. Ziel war es, mit Scout JS ein UI zu bauen, das sich komplett vom Standard Look & Feel unterscheidet."
   }
 }
