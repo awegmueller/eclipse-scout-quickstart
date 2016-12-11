@@ -19,9 +19,13 @@ Viele Nützliche Konzepte in Scout:
 
 Nervig:
 - Scout CSS (braucht zu viele Resets, zu viele Settings die nur für Scout/CRM L&F gut sind
-  machen viele gute Defaults kaputt: Beispiel Hand-Cursor bei Links)
+  machen viele gute Defaults kaputt: Beispiel Hand-Cursor bei Links). Die Default Styles sollten so sein,
+  dass alle Elemente auf dem Screen sichtbar sind (mehr nicht - nicht schön ausgerichtet oder designed)
 - Programatische Layouts (sollten nicht default sein)
 - Scout Icons Font (wär ein Zufall wenn jemand in seinem Design ein Icon von Scout benutzen möchte)
+- Dialog: sollte keinen close handler rendern. Die wahrscheinlichkeit dass der nicht passt ist hoch
+  auch wenn er sich per CSS stylen lässt, möchte man ihn im DOM an einer anderen stelle haben, oder in einem
+  menü, oder oder oder
 
 Facts:
 - Konzept: Komponenten- / Event-basiert -> OK, anderer ansatz als data-binding

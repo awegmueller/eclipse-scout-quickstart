@@ -17,20 +17,20 @@ videogames.GameForm.prototype._init = function(model) {
 
   // FIXME - grid layout muss komplett automatisch passieren
   // + defaults für GroupBox stimmt noch nicht (ist aber auf HEAD schon gefixt glaube ich)
-  var grid = new scout.HorizontalGroupBoxBodyGrid();
-  grid.validate(this.rootGroupBox);
-  grid.validate(this.rootGroupBox.fields[0]);
+  // + mit rein CSS basiertem layout brauchts das gar nicht
+  // var grid = new scout.HorizontalGroupBoxBodyGrid();
+  // grid.validate(this.rootGroupBox);
+  // grid.validate(this.rootGroupBox.fields[0]);
 
   var menuBar = this.rootGroupBox.menuBar;
-  menuBar.bottom();
-  // menuBar.setDefaultMenu(okButton);
+  menuBar.top();
 
   // FIXME - ich glaube es ist schwierig zu erklären warum man nicht programmatisch das default menu
   // setzen kann. Die menuBar hat da in updateDefaultMenu seine eigenen Vorstellungen was das default menu sein
   // soll. Dumm auch, als default menu wird ein menu genommen das auf ENTER reagiert, d.h. man muss einen keystroke
   // dafür konfigurieren. Was man in einer reinen touch app vermutlich eher nicht machen will.
+  // menuBar.setDefaultMenu(okButton);
 
-  this.title = this.game.title;
   this.widget('TitleField').setValue(this.game.title);
   this.widget('DeveloperField').setValue(this.game.developer);
   this.widget('GenreField').setValue(this.game.genre);
@@ -46,7 +46,28 @@ videogames.GameForm.prototype._onCancelAction = function(event) {
   this.session.desktop.hideForm(this);
 };
 
-videogames.GameForm.prototype._render = function($parent) {
-  videogames.GameForm.parent.prototype._render.call(this, $parent);
+videogames.GameForm.prototype._postRender = function() {
+  this._switchToCssLayout();
+};
 
+// FIXME: drag handle von dialogen sollte optional sein (bei mobile/fullscreen) will ich nicht draggen
+videogames.GameForm.prototype._switchToCssLayout = function() {
+  switchLayout(this);
+  switchLayout(this.rootGroupBox);
+  switchLayout(this.rootGroupBox.fields[0]);
+  switchLayout(this.rootGroupBox.fields[0].fields[0]);
+  switchLayout(this.rootGroupBox.fields[0].fields[1]);
+  switchLayout(this.rootGroupBox.fields[0].fields[2]);
+
+  this.$container.addClass('css-only');
+
+  function switchLayout(field) {
+    if (field.htmlComp) {
+      field.htmlComp.setLayout(new scout.NullLayout());
+    }
+    if (field instanceof scout.GroupBox) {
+      scout.HtmlComponent.get(field.$body).setLayout(new scout.NullLayout());
+      field.$body.removeClass('logical-grid-layout');
+    }
+  }
 };

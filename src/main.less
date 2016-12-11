@@ -12,6 +12,7 @@
   background-color: rgba(0, 0, 0, 0.3);
   /*
   FIXME doof, ich komme nicht einfach an die LESS sachen vom Scour Core ran :-(
+  --> Lösung, die LESS sachen als teil vom deployment ausliefern, dann kann man das zeug bei bedarf selber importieren
   #scout.animation(fadeIn ease-in 1);
   #scout.animation-duration(0.25s);
   */
@@ -27,4 +28,104 @@
   background: #45484d; /* Old browsers */
   background: -webkit-linear-gradient(top,  #45484d 0%,#000000 100%); /* Chrome10-25,Safari5.1-6 */
   background: linear-gradient(to bottom,  #45484d 0%,#000000 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+}
+
+/** RESET Scout STYLES **/
+
+.form-field {
+  & > label {
+    position: inherit;
+  }
+  & > .field {
+    position: inherit;
+  }
+  & > .mandatory-indicator {
+    position: inherit;
+  }
+  & > .status {
+    position: inherit;
+  }
+  & > input {
+    border-radius: 0;
+
+    &:focus {
+      box-shadow: none;
+    }
+  }
+}
+.string-field > .field {
+  width: initial;
+}
+
+.dialog {
+  margin: 0;
+  border: 0;
+  border-radius: 0;
+}
+
+.menubar.bottom {
+  border-top: none;
+}
+
+.main-menubar {
+  padding: 0;
+}
+
+/** Forms Restyling **/
+.form-field {
+
+  white-space: nowrap;
+
+  &:not(.root-group-box) {
+    margin-bottom: 14px;
+  }
+
+  & > input {
+    height: 30px;
+    border: none;
+    border-bottom: solid 1px #666;
+    padding-bottom: 1px;
+
+    &:focus {
+      border-bottom: solid 2px orange;
+      padding-bottom: 0;
+    }
+  }
+
+  & > label {
+    display: inline-block;
+    vertical-align: bottom;
+    min-width: 80px;
+    font-size: 11px;
+    color: #777;
+  }
+  & > .field {
+    display: inline-block;
+  }
+  & > .mandatory-indicator {
+    display: inline-block;
+  }
+  & > .status {
+    display: inline-block;
+  }
+
+};
+
+.dialog {
+  width: 100%;
+  max-width: 400px;
+}
+
+.menubar {
+  background-color: #2196F3;
+  padding: 0 20px;
+  font-size: 14px;
+}
+
+.menubar > .menubox > .menu-item:not(.disabled) {
+  color: white;
+
+  &:active {
+    color: orange;
+  }
 }

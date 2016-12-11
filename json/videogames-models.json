@@ -4,7 +4,6 @@
     "closable": false,
     "resizable": false,
     "id": "videogames.GameForm",
-    "title": "Holy Cow!",
     "objectType": "Form",
     "rootGroupBox": {
       "objectType": "GroupBox",
@@ -24,7 +23,8 @@
             {
               "id": "TitleField",
               "objectType": "StringField",
-              "label": "${textKey:Title}"
+              "label": "${textKey:Title}",
+              "mandatory": true
             },
             {
               "id": "DeveloperField",
@@ -41,17 +41,18 @@
       ],
       "menus": [
         {
-          "id": "OkButton",
-          "objectType": "Menu",
-          "text": "${textKey:OK}",
-          "actionStyle": 1,
-          "keyStroke": "ENTER"
-        },
-        {
           "id": "CancelButton",
           "objectType": "Menu",
-          "text": "${textKey:Cancel}",
-          "actionStyle": 1
+          "actionStyle": 0,
+          "iconId": "font:awesomeIcons \uf104"
+        },
+        {
+          "id": "OkButton",
+          "objectType": "Menu",
+          "text": "${textKey:Save}",
+          "actionStyle": 0,
+          "keyStroke": "ENTER",
+          "horizontalAlignment": 1
         }
       ]
     }

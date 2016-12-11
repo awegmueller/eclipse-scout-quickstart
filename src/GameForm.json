@@ -20,14 +20,14 @@
         "id": "OkButton",
         "objectType": "Menu",
         "text": "${textKey:OK}",
-        "actionStyle": 1,
+        "actionStyle": 0,
         "keyStroke": "ENTER"
       },
       {
         "id": "CancelButton",
         "objectType": "Menu",
         "text": "${textKey:Cancel}",
-        "actionStyle": 1
+        "actionStyle": 0
       }
     ]
   }
