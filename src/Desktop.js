@@ -44,7 +44,7 @@ videogames.Desktop.prototype._init = function(model) {
     title: 'The Last Guardian',
     genre: 'Action Adventure',
     developer: 'Fumito Ueda',
-    image: '/img/t-last-guardian.jpg',
+    image: 'img/t-last-guardian.jpg',
     description: 'The Last Guardian ist ein vom japanischen Entwicklerstudio gen DESIGN und dem SIE Japan Studio exklusiv für die PlayStation 4 entwickeltes Spiel des Genre Action-Adventure. Herausgeber ist Sony Interactive Entertainment.'
   });
 
@@ -53,7 +53,7 @@ videogames.Desktop.prototype._init = function(model) {
     title: 'Dishonored 2',
     genre: 'Stealth Action',
     developer: 'Arkane Studios',
-    image: '/img/t-dishonored-2.jpg',
+    image: 'img/t-dishonored-2.jpg',
     description: 'Dishonored 2 ist ein Stealth-Actionspiel des französischen Entwicklers Arkane Studios, publiziert von Bethesda Softworks. Es erschien am 11. November 2016 für Windows-PCs, Xbox One und PlayStation 4.'
   });
 
@@ -62,7 +62,7 @@ videogames.Desktop.prototype._init = function(model) {
     title: 'Deux Ex Mankind Divided',
     genre: 'Stealth Action',
     developer: 'Square Enix',
-    image: '/img/t-deus-ex-mankind-divided.jpg',
+    image: 'img/t-deus-ex-mankind-divided.jpg',
     description: 'Deus Ex: Mankind Divided ist ein Actionspiel des kanadische Computerspielentwicklers Eidos Montreal für Windows, Linux, Playstation 4 und Xbox One und der vierte Teil der Computerspielreihe Deus Ex.'
   });
 
@@ -71,7 +71,7 @@ videogames.Desktop.prototype._init = function(model) {
     title: 'Don\'t Starve',
     genre: 'Open World Survival',
     developer: 'Klei Entertainment',
-    image: '/img/t-dont-starve.jpg',
+    image: 'img/t-dont-starve.jpg',
     description: 'Don’t Starve ist ein Open-World Survival Spiel, das von Klei Entertainment entwickelt und veröffentlicht wurde. Es erschien am 23. April 2013 als digitaler Release.'
   });
 
@@ -80,7 +80,7 @@ videogames.Desktop.prototype._init = function(model) {
     title: 'Uncharted 4',
     genre: 'Action Adventure',
     developer: 'Naughty Dog',
-    image: '/img/t-uncharted4.jpg',
+    image: 'img/t-uncharted4.jpg',
     description: 'Uncharted 4: A Thief’s End ist ein vom amerikanischen Entwicklerstudio Naughty Dog exklusiv für die PlayStation 4 entwickeltes Spiel des Genres Action-Adventure. Herausgeber ist Sony Computer Entertainment.'
   });
 
@@ -89,7 +89,7 @@ videogames.Desktop.prototype._init = function(model) {
     title: 'No Man\'s Sky',
     genre: 'Open World, Action',
     developer: 'Hello Games',
-    image: '/img/t-no-mans-sky.jpg',
+    image: 'img/t-no-mans-sky.jpg',
     description: 'No Man’s Sky ist ein Computerspiel des Indie-Entwicklerstudios Hello Games, in dem der Spieler die Figur eines Weltraumentdeckers steuert. Das Spiel erschien in Europa am 10. August 2016 für die PlayStation 4 und am 12. August für Windows.'
   });
 
@@ -98,7 +98,7 @@ videogames.Desktop.prototype._init = function(model) {
     title: 'Metal Gear Solid V',
     genre: 'Stealth Shooter',
     developer: 'Koijma Productions',
-    image: '/img/t-mgs-v.jpg',
+    image: 'img/t-mgs-v.jpg',
     description: 'Metal Gear Solid 5: The Phantom Pain ist ein Computerspiel der Metal-Gear-Solid-Reihe, das von Kojima Productions entwickelt und von Konami veröffentlicht wurde. Das Spiel ist wie die Vorgänger ein Stealth-Shooter und erschien am 1.'
   });
 
